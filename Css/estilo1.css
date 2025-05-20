@@ -4,12 +4,16 @@
   --background: #fff;
   --frame: #e0e0e0;
   --blob: #ffe0dc;
+  --highlight-green: #c2e812;
+  --highlight-blue: #42c5f5;
+  --highlight-pink: #fca1d2;
+  --highlight-yellow: #fcd562;
 }
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
+  background: #fefefe;
   display: flex;
   justify-content: center;
   padding: 2rem;
@@ -19,21 +23,18 @@ body {
   position: relative;
   background: var(--background);
   width: 100%;
-  max-width: 400px;
-  margin: auto;
-  padding: 6rem 1.5rem 3rem;
+  max-width: 420px;
+  padding: 5rem 1.5rem 3rem;
   border: 10px double var(--frame);
   border-radius: 28px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, .12);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .12);
   overflow: visible;
   z-index: 1;
 }
 
-.blob,
-.blob-2 {
+.blob, .blob-2, .blob-3 {
   position: absolute;
   z-index: 0;
-  background: var(--blob);
   border-radius: 50%;
 }
 
@@ -42,6 +43,7 @@ body {
   left: -80px;
   width: 150px;
   height: 150px;
+  background: var(--highlight-green);
 }
 
 .blob-2 {
@@ -49,34 +51,56 @@ body {
   right: -60px;
   width: 100px;
   height: 100px;
+  background: var(--highlight-yellow);
+}
+
+.blob-3 {
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: var(--highlight-pink);
 }
 
 .menu h1 {
   margin-top: 0;
   text-align: center;
-  font-size: 1.8rem;
-  color: var(--primary);
+  font-size: 2.2rem;
+  color: #442303;
   z-index: 2;
   position: relative;
-}
-
-.description {
-  text-align: center;
-  color: var(--secondary);
-  margin-bottom: 2rem;
-  font-size: 1rem;
+  letter-spacing: 1px;
 }
 
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 h2 {
-  font-size: 1.3rem;
-  color: var(--primary);
-  border-bottom: 2px solid var(--primary);
-  padding-bottom: 0.25rem;
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
   margin-bottom: 1rem;
+}
+
+.specialties h2 {
+  background: var(--highlight-blue);
+}
+
+.mixtos h2 {
+  background: var(--highlight-pink);
+}
+
+.sides h2 {
+  background: var(--highlight-yellow);
+  color: #442303;
+}
+
+.drinks h2 {
+  background: var(--highlight-green);
+  color: #242424;
 }
 
 ul {
@@ -88,21 +112,44 @@ ul {
 li {
   display: flex;
   justify-content: space-between;
-  padding: 4px 0;
-  border-bottom: 1px dotted #ddd;
+  padding: 6px 0;
+  border-bottom: 1px dotted #bbb;
+  font-size: 1rem;
 }
 
 .price {
-  font-weight: bold;
-  color: var(--secondary);
+  font-weight: 600;
+  color: #222;
 }
 
-/* Bebidas en dos columnas */
-.beverages .columns {
-  display: flex;
-  gap: 1.5rem;
+.separator {
+  border: none;
+  border-top: 2px dashed var(--frame);
+  margin: 2rem 0;
 }
 
-.beverages ul {
-  flex: 1;
+.reservation {
+  background: var(--highlight-yellow);
+  color: #000;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 12px;
+  margin-top: 3rem;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 480px) {
+  .menu {
+    padding: 4rem 1rem 2rem;
+  }
+
+  li {
+    font-size: 0.95rem;
+  }
+
+  .menu h1 {
+    font-size: 1.8rem;
+  }
 }
