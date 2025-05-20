@@ -23,18 +23,19 @@ body{
 }
 
 /* ----- CONTENEDOR DE LA CARTA ----- */
-.menu{
-  position:relative;
-  background:#fff;
-  width:100%;
-  max-width:380px;
-  margin:0 auto;
-  padding:2rem 1.5rem 3rem;
-  border:10px double var(--frame);      /* marco “lindo” */
-  border-radius:28px;
-  box-shadow:0 0 15px rgba(0,0,0,.12);
-  overflow:hidden;                      /* oculta blobs */
+.menu {
+  position: relative;
+  background: #fff;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 3rem; /* Aumenta espacio superior */
+  border: 10px double var(--frame);
+  border-radius: 28px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .12);
+  overflow: visible; /* Cambiado para que no se corte la parte de arriba */
 }
+
 
 /* ----- FIGURAS DECORATIVAS ----- */
 .blob,.blob-2,.blob-3{
@@ -137,6 +138,16 @@ li .price{color:var(--price);white-space:nowrap;font-weight:700;}
   .blob{width:120px;height:80px;top:-30px;left:-35px;}
   .blob-2{width:140px;height:75px;top:-25px;right:-40px;}
   .blob-3{width:120px;height:65px;bottom:-25px;left:10px;}
+}
+.beverages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.beverages ul {
+  width: 48%;
 }
 
 
