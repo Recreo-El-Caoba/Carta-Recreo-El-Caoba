@@ -138,3 +138,23 @@ li .price{color:var(--price);white-space:nowrap;font-weight:700;}
   .blob-2{width:140px;height:75px;top:-25px;right:-40px;}
   .blob-3{width:120px;height:65px;bottom:-25px;left:10px;}
 }
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  max-width: 500px;
+  width: 100%;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
