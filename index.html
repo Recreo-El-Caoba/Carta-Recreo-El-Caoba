@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carta</title>
 
   <!-- Google Font for a friendly look similar to image -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -32,15 +32,15 @@
 
     /* main wrapper keeps fixed width similar to A5 portrait */
 
-    .menu{
-      width: 350px;
-      position:relative;
-      overflow:hidden;
-      border:6px solid var(--text-brown);
-      border-radius:16px;
-      box-shadow:0 0 0 4px var(--pink-accent), 0 0 0 8px var(--lime-accent);
-      padding: 1.5rem;
-    }
+.menu{
+  width: 350px;
+  position:relative;
+  overflow:hidden;
+  border:6px solid var(--text-brown);
+  border-radius:16px;
+  box-shadow:0 0 0 4px var(--pink-accent), 0 0 0 8px var(--lime-accent);
+  padding: 1.5rem;
+}
 
 
     /* decorative blobs */
@@ -179,50 +179,6 @@
       margin:1.5rem auto 0;
       width:max-content;
     }
-
-    /* Responsive adjustments */
-    @media (max-width: 400px) {
-      .menu {
-        width: 90vw;
-        padding: 1rem;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-        -webkit-text-stroke-width: 1px;
-        margin-bottom: 1rem;
-      }
-
-      h2 {
-        font-size: 1rem;
-      }
-
-      /* Ajustar blobs para que no salgan de la caja */
-      .blob {
-        width: 100px;
-        height: 65px;
-        top: -20px;
-        left: -20px;
-      }
-      .blob-2 {
-        width: 110px;
-        height: 60px;
-        top: -20px;
-        right: -20px;
-      }
-      .blob-3 {
-        width: 90px;
-        height: 50px;
-        bottom: -20px;
-        left: 10px;
-      }
-
-      .circle {
-        width: 180px;
-        height: 180px;
-        top: 30px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -246,7 +202,7 @@
       </ul>
     </section>
 
-    <hr class="separator" />
+    <hr class="separator">
 
     <section class="mixtos">
       <h2>Mixtos</h2>
@@ -257,7 +213,7 @@
       </ul>
     </section>
 
-    <hr class="separator" />
+    <hr class="separator">
 
     <section class="sides">
       <h2>Guarniciones</h2>
@@ -267,5 +223,25 @@
         <li><span>Porción de Arroz</span><span class="dots"></span><span class="price">s/ 5</span></li>
         <li><span>Porción Ensalada</span><span class="dots"></span><span class="price">s/ 3</span></li>
         <li><span>Porción Yuca</span><span class="dots"></span><span class="price">s/ 3</span></li>
-        <li><
+        <li><span>Plátano Asado</span><span class="dots"></span><span class="price">s/ 1.5</span></li>
+      </ul>
+    </section>
 
+    <hr class="separator">
+
+    <section class="drinks">
+      <h2>Refrescos</h2>
+      <ul>
+        <li><span>Chicha 1 lt</span><span class="dots"></span><span class="price">s/ 8</span></li>
+        <li><span>Chicha 1/2 lt</span><span class="dots"></span><span class="price">s/ 4</span></li>
+        <li><span>Chicha vaso</span><span class="dots"></span><span class="price">s/ 2</span></li>
+      </ul>
+    </section>
+
+    <div class="blob-3"></div>
+
+    <div class="reservation">Reservaciones 927 084 099</div>
+
+  </div>
+</body>
+</html>
