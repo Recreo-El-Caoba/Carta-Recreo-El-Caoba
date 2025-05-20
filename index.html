@@ -35,13 +35,11 @@
       width: 350px;
       position:relative;
       overflow:hidden;
-      border:8px solid #6d3b0c;
-      border-radius:20px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.3);
-      background:#fff;
-      padding: 1rem;
+      border:8px solid transparent; /* solo deja espacio para las formas */
+      border: 6px solid var(--blue-accent);
+      border-radius: 16px;
+      box-shadow: 0 0 0 4px var(--pink-accent), 0 0 0 8px var(--lime-accent);
     }
-
 
     /* decorative blobs */
     .blob{
@@ -245,5 +243,3 @@
   </div>
 </body>
 </html>
-
-
