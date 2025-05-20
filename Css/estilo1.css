@@ -1,0 +1,140 @@
+/* ------------- ESTILO PRINCIPAL ------------- */
+:root{
+  /* Accent colours */
+  --blue-accent:#009fe8;
+  --pink-accent:#f55ad3;
+  --lime-accent:#d2e715;
+  --green-accent:#38aa37;
+  --text-brown:#6d3b0c;
+  --price:#740000;
+  --separator:#333;
+
+  --frame:#d7963b;        /* marco decorativo */
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#ffffff;
+  display:flex;
+  justify-content:center;
+  padding:2rem 6px;
+}
+
+/* ----- CONTENEDOR DE LA CARTA ----- */
+.menu{
+  position:relative;
+  background:#fff;
+  width:100%;
+  max-width:380px;
+  margin:0 auto;
+  padding:2rem 1.5rem 3rem;
+  border:10px double var(--frame);      /* marco “lindo” */
+  border-radius:28px;
+  box-shadow:0 0 15px rgba(0,0,0,.12);
+  overflow:hidden;                      /* oculta blobs */
+}
+
+/* ----- FIGURAS DECORATIVAS ----- */
+.blob,.blob-2,.blob-3{
+  position:absolute;
+  z-index:-1;
+  border-radius:60% 40% 30% 70%;
+  opacity:.95;
+}
+.blob{
+  width:160px;height:100px;
+  background:var(--lime-accent);
+  top:-40px;left:-40px;transform:rotate(-12deg);
+}
+.blob-2{
+  width:170px;height:90px;
+  background:var(--frame);
+  top:-35px;right:-50px;transform:rotate(12deg);
+  border-radius:70% 30% 40% 60%;
+}
+.blob-3{
+  width:150px;height:80px;
+  background:var(--lime-accent);
+  bottom:-35px;left:20px;transform:rotate(10deg);
+  border-radius:40% 60% 60% 40%;
+}
+
+.circle{
+  position:absolute;
+  top:45px;left:50%;transform:translateX(-50%);
+  width:260px;height:260px;
+  background:rgba(219,235,169,.55);
+  border-radius:50%;
+  z-index:-1;
+}
+
+/* ----- TITULO PRINCIPAL ----- */
+h1{
+  text-align:center;
+  font-size:2.4rem;
+  font-weight:700;
+  color:var(--text-brown);
+  -webkit-text-stroke:2px #000;
+  margin-bottom:1.5rem;
+  text-transform:uppercase;
+}
+
+/* ----- SUBTITULOS DE SECCIÓN ----- */
+h2{
+  font-size:1.1rem;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:.5rem;
+}
+h2::after{
+  content:"";
+  display:block;
+  height:8px;
+  width:100px;
+  margin-top:4px;
+  border-radius:4px;
+}
+.specialties h2{color:var(--blue-accent);} .specialties h2::after{background:var(--blue-accent);}
+.mixtos      h2{color:var(--pink-accent);} .mixtos      h2::after{background:var(--pink-accent);}
+.sides       h2{color:var(--lime-accent);} .sides       h2::after{background:var(--lime-accent);}
+.drinks      h2{color:var(--green-accent);} .drinks      h2::after{background:var(--green-accent);}
+
+/* ----- SEPARADOR ----- */
+.separator{border:none;border-top:4px solid var(--separator);margin:1.2rem 0;}
+
+/* ----- LISTA DE PLATOS ----- */
+ul{list-style-type:none;}
+li{display:flex;align-items:center;margin:.25rem 0;font-size:.88rem;font-weight:600;color:#000;}
+li span:first-child::before{content:"• ";}
+li .dots{flex:1;border-bottom:1px dotted #999;margin:0 .4rem;}
+li .price{color:var(--price);white-space:nowrap;font-weight:700;}
+
+/* ----- RESERVAS ----- */
+.reservation{
+  display:flex;align-items:center;justify-content:center;
+  background:#ecbc2e;
+  padding:.5rem 1rem;
+  border-radius:6px;
+  font-weight:700;font-size:.9rem;
+  color:#b31313;
+  margin:1.5rem auto 0;
+  width:max-content;
+}
+
+/* ---------- RESPONSIVE ------------- */
+@media (max-width:480px){
+  body{padding:1rem 4px;}
+  .menu{padding:1.5rem 1rem 2.5rem;border-width:8px;}
+  h1{font-size:1.9rem;}
+  h2{font-size:1rem;}
+  li{font-size:.8rem;}
+  .reservation{font-size:.8rem;}
+  /* reducir adornos */
+  .circle{width:220px;height:220px;top:35px;}
+  .blob{width:120px;height:80px;top:-30px;left:-35px;}
+  .blob-2{width:140px;height:75px;top:-25px;right:-40px;}
+  .blob-3{width:120px;height:65px;bottom:-25px;left:10px;}
+}
