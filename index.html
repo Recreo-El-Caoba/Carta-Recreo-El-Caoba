@@ -1,60 +1,244 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carta</title>
-  <link rel="stylesheet" href="Css/estilo1.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Google Font for a friendly look similar to image -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Accent colours taken from the image */
+      --blue-accent:#009fe8;
+      --pink-accent:#f55ad3;
+      --lime-accent:#d2e715;
+      --green-accent:#38aa37;
+      --text-brown:#6d3b0c;
+      --price:#6d0000;
+      --separator:#333;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;}
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#ffffff;
+      display:flex;
+      justify-content:center;
+      padding:2rem 0;
+    }
+
+    /* main wrapper keeps fixed width similar to A5 portrait */
+    .menu{
+      width: 350px;
+      position:relative;
+      overflow:hidden;
+      border:8px solid transparent; /* just keeps room for the shapes */
+    }
+
+    /* decorative blobs */
+    .blob{
+      position:absolute;
+      z-index:-1;
+      width:140px;
+      height:90px;
+      background:var(--lime-accent);
+      top:-30px;left:-30px;
+      border-radius:60% 40% 30% 70%;
+      transform:rotate(-12deg);
+    }
+    .blob-2{
+      top:-25px;right:-30px;
+      background:#d7963b;
+      border-radius: 70% 30% 40% 60%;
+      width:150px;
+      height:80px;
+      transform:rotate(12deg);
+      position:absolute;
+      z-index:-1;
+    }
+    .blob-3{
+      bottom:-30px;left:15px;
+      background:var(--lime-accent);
+      border-radius: 40% 60% 60% 40%;
+      width:130px;
+      height:70px;
+      transform:rotate(10deg);
+      position:absolute;
+      z-index:-1;
+    }
+
+    /* pale circle behind title */
+    .circle{
+      position:absolute;
+      top:40px;
+      left:50%;
+      transform:translateX(-50%);
+      width:260px;
+      height:260px;
+      background:rgba(219, 235, 169,0.55);
+      border-radius:50%;
+      z-index:-1;
+    }
+
+    /* Title */
+    h1{
+      text-align:center;
+      font-size:2.4rem;
+      font-weight:700;
+      color:var(--text-brown);
+      -webkit-text-stroke:2px #000;
+      margin-bottom:1.5rem;
+      text-transform:uppercase;
+    }
+
+    /* section headings */
+    h2{
+      font-size:1.1rem;
+      font-weight:700;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      margin-bottom:.5rem;
+    }
+
+    /* coloured underline bar */
+    h2::after{
+      content:'';
+      display:block;
+      height:8px;
+      width:100px;
+      margin-top:4px;
+      border-radius:4px;
+    }
+
+    /* make each category accent */
+    .specialties h2{color:var(--blue-accent);}
+    .specialties h2::after{background:var(--blue-accent);}
+    .mixtos h2{color:var(--pink-accent);}
+    .mixtos h2::after{background:var(--pink-accent);}
+    .sides h2{color:var(--lime-accent);}
+    .sides h2::after{background:var(--lime-accent);}
+    .drinks h2{color:var(--green-accent);}
+    .drinks h2::after{background:var(--green-accent);}
+
+    /* horizontal separator between sections */
+    .separator{
+      border:none;
+      border-top:4px solid var(--separator);
+      margin:1.2rem 0;
+    }
+
+    /* menu list */
+    ul{
+      list-style-type:none;
+    }
+    li{
+      display:flex;
+      align-items:center;
+      margin:.25rem 0;
+      font-size:.88rem;
+      font-weight:600;
+      color:#000;
+    }
+    li span:first-child::before{
+      content:'• ';
+      color:inherit;
+    }
+
+    /* dotted leader between name & price */
+    li .dots{
+      flex:1;
+      border-bottom:1px dotted #999;
+      margin:0 .4rem;
+    }
+
+    li .price{
+      color:var(--price);
+      white-space:nowrap;
+      font-weight:700;
+    }
+
+    /* Reservation banner */
+    .reservation{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#ecbc2e;
+      padding:.5rem 1rem;
+      border-radius:6px;
+      font-weight:700;
+      font-size:.9rem;
+      color:#d11919;
+      margin:1.5rem auto 0;
+      width:max-content;
+    }
+  </style>
 </head>
 <body>
   <div class="menu">
+    <!-- decorative shapes -->
+    <div class="blob"></div>
+    <div class="blob-2"></div>
+    <div class="circle"></div>
+
     <h1>CARTA</h1>
 
-    <section class="especialidades">
-      <h2>ESPECIALIDADES</h2>
+    <section class="specialties">
+      <h2>Especialidades</h2>
       <ul>
-        <li><span>Pollo Canga</span><span class="price">s/ 16</span></li>
-        <li><span>Picante de Cuy</span><span class="price">s/ 26</span></li>
-        <li><span>Picante De Cuy Con Cabeza</span><span class="price">s/ 30</span></li>
-        <li><span>Chancho A La Caja China</span><span class="price">s/ 27</span></li>
-        <li><span>Chancho al Cilindro</span><span class="price">s/ 25</span></li>
-        <li><span>Paco Frito</span><span class="price">s/ 25</span></li>
+        <li><span>Pollo Canga</span><span class="dots"></span><span class="price">s/ 16</span></li>
+        <li><span>Pí​cante de Cuy</span><span class="dots"></span><span class="price">s/ 26</span></li>
+        <li><span>Pí​cante de Cuy con Cabeza</span><span class="dots"></span><span class="price">s/ 30</span></li>
+        <li><span>Chancho a la Caja China</span><span class="dots"></span><span class="price">s/ 27</span></li>
+        <li><span>Chancho al Cilindro</span><span class="dots"></span><span class="price">s/ 25</span></li>
+        <li><span>Paco Frito</span><span class="dots"></span><span class="price">s/ 25</span></li>
       </ul>
     </section>
+
+    <hr class="separator">
 
     <section class="mixtos">
-      <h2>MIXTOS</h2>
+      <h2>Mixtos</h2>
       <ul>
-        <li><span>Mixto de Chancho y Pollo</span><span class="price">s/ 35</span></li>
-        <li><span>Mixto de Pollo y Cuy</span><span class="price">s/ 40</span></li>
-        <li><span>Mixto de Chancho y Cuy</span><span class="price">s/ 45</span></li>
+        <li><span>Mixto de Chancho y Pollo</span><span class="dots"></span><span class="price">s/ 35</span></li>
+        <li><span>Mixto de Pollo y Cuy</span><span class="dots"></span><span class="price">s/ 40</span></li>
+        <li><span>Mixto de Chancho y Cuy</span><span class="dots"></span><span class="price">s/ 45</span></li>
       </ul>
     </section>
 
-    <section class="guarniciones">
-      <h2>GUARNICIONES</h2>
+    <hr class="separator">
+
+    <section class="sides">
+      <h2>Guarniciones</h2>
       <ul>
-        <li><span>Arroz Con Crema y cabeza de cuy</span><span class="price">s/ 10</span></li>
-        <li><span>Arroz Con Crema</span><span class="price">s/ 7</span></li>
-        <li><span>Porción de Arroz</span><span class="price">s/ 5</span></li>
-        <li><span>Porción Ensalada</span><span class="price">s/ 3</span></li>
-        <li><span>Porción Yuca</span><span class="price">s/ 3</span></li>
-        <li><span>Plátano Asado</span><span class="price">s/ 1.5</span></li>
+        <li><span>Arroz con Crema y cabeza de cuy</span><span class="dots"></span><span class="price">s/ 10</span></li>
+        <li><span>Arroz con Crema</span><span class="dots"></span><span class="price">s/ 7</span></li>
+        <li><span>Porción de Arroz</span><span class="dots"></span><span class="price">s/ 5</span></li>
+        <li><span>Porción Ensalada</span><span class="dots"></span><span class="price">s/ 3</span></li>
+        <li><span>Porción Yuca</span><span class="dots"></span><span class="price">s/ 3</span></li>
+        <li><span>Plátano Asado</span><span class="dots"></span><span class="price">s/ 1.5</span></li>
       </ul>
     </section>
 
-    <section class="refrescos">
-      <h2>REFRESCOS</h2>
+    <hr class="separator">
+
+    <section class="drinks">
+      <h2>Refrescos</h2>
       <ul>
-        <li><span>Chicha 1 lt</span><span class="price">s/ 8</span></li>
-        <li><span>Chicha 1/2 lt</span><span class="price">s/ 4</span></li>
-        <li><span>Chicha vaso</span><span class="price">s/ 2</span></li>
+        <li><span>Chicha 1 lt</span><span class="dots"></span><span class="price">s/ 8</span></li>
+        <li><span>Chicha 1/2 lt</span><span class="dots"></span><span class="price">s/ 4</span></li>
+        <li><span>Chicha vaso</span><span class="dots"></span><span class="price">s/ 2</span></li>
       </ul>
     </section>
 
-    <div class="reservacion">Reservaciones 927 084 099</div>
+    <div class="blob-3"></div>
+
+    <div class="reservation">Reservaciones 927 084 099</div>
+
   </div>
 </body>
 </html>
+
 
