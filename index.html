@@ -179,21 +179,15 @@
       margin:1.5rem auto 0;
       width:max-content;
     }
-
-    section.bebidas h2 {
-      color: #97431B;
-    }
-
     section.sides h2 {
       color: #939454;
     }    
-    section.drinks h2:nth-of-type(2) {
-  color: #97431B;
-}
-
-section.drinks h2:nth-of-type(2)::after {
-  background: #97431B;
-}
+    section.drinks:nth-of-type(2) h2 {
+      color: #97431B;
+    }
+    section.drinks:nth-of-type(2) h2::after {
+      background: #97431B;
+    }
   </style>
 </head>
 <body>
@@ -256,7 +250,7 @@ section.drinks h2:nth-of-type(2)::after {
     <!-- ==================== NUEVA SECCIÓN BEBIDAS ==================== -->
     <hr class="separator">
 
-    <section class="drinks section.bebidas">
+    <section class="drinks">
       <h2>Bebidas</h2>
       <ul>
         <li><span>Inca o Coca 3 lt</span><span class="dots"></span><span class="price">s/ 15</span></li>
