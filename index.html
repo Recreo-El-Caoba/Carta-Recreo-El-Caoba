@@ -187,6 +187,36 @@
     section.sides h2 {
       color: #939454;
     }    
+    /* Estilo base para títulos de sección */
+.section-title {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/* Línea decorativa debajo del título */
+.section-line {
+  height: 3px;
+  width: 60px;
+  margin-bottom: 1em;
+  border-radius: 2px;
+}
+
+/* Colores específicos */
+.drinks-title {
+  color: #97431B;
+}
+
+.drinks-line {
+  background-color: #97431B;
+}
+
+.sides-title {
+  color: #939454;
+}
+
+.sides-line {
+  background-color: #939454;
+}
   </style>
 </head>
 <body>
@@ -250,7 +280,8 @@
     <hr class="separator">
 
     <section class="drinks">
-      <h2>Bebidas</h2>
+  <h2 class="section-title drinks-title">Bebidas</h2>
+  <div class="section-line drinks-line"></div>
       <ul>
         <li><span>Inca o Coca 3 lt</span><span class="dots"></span><span class="price">s/ 15</span></li>
         <li><span>Inca o Coca 2 lt</span><span class="dots"></span><span class="price">s/ 13</span></li>
